@@ -1,6 +1,6 @@
 body {
   animation-name: backgroundChange;
-  animation-duration: 10s;
+  animation-duration: 50s;
   animation-iteration-count: infinite;
   animation-direction: alternate;
   animation-timing-function: ease-in-out;
@@ -9,18 +9,18 @@ body {
 .moveme {
   position: absolute;
   /* comment out 'top' and 'left' and see what happens */
-  top: 0;
-  left: 0;
+  top: 100; 
+  left: 100; 
   box-sizing: border-box;
-  width: 200px;
-  height: 200px;
-  padding: 0 1em;
-  background-color: red;
+  width: 50px;
+  height: 150px;
+  padding: 0 10em;
+  background-color: rgb;
   animation-name: movingBox;
   animation-duration: 5s;
-  animation-iteration-count: 1; /* infinite */
-  animation-direction: alternate;
-  animation-timing-function: ease-in-out;
+  animation-iteration-count: 2; /* infinite */
+  animation-direction: reverse;
+  animation-timing-function: linear;
 }
 
 /*
@@ -32,25 +32,44 @@ body {
     so *never* use for mobiles or with "animation-iteration: infinite;"
 */
 @keyframes movingBox {
-  0%   { background-color:rgb(255, 0, 0); left: 0px; top: 0px; }
-  25%  { background-color:rgb(255, 165, 0); left: calc(100% - 200px); top: 0px; }
-  50%  { background-color:rgb(64, 224, 208); left: calc(100% - 200px); top: calc(100% - 200px); border-radius: 50%; }
-  75%  { background-color:rgb(147, 112, 216); left: 0; top: calc(100% - 200px); }
-  100% { background-color:rgb(255, 0, 0); left: 0px; top: 0px; }
+	
+	0%   {top: 0px; left: 0px; background: red;}
+    25%  {top: 0px; left: 100px; background: blue;}
+    50%  {top: 100px; left: 100px; background: yellow;}
+    75%  {top: 100px; left: 0px; background: green;}
+    100% {top: 0px; left: 0px; background: red;}
+}
+	
+	
+/*
+	0%   {left: 0px; background: red; width: 100px;}
+	25%  {right: 0px; background: blue; width: 100px;}
+	50%  {left: 0px; background: yellow; width: 100px;}
+    75%  {right: 200px; background: green; width: 300px;}
+*/
+
+
+/*
+  0%   { background-color:red(255, 0, 0); left: 0px; top: 0px; }
+  25%  { background-color:yellow(255, 165, 0); left: calc(100% - 200px); top: 0px; }
+  50%  { background-color:blue(64, 224, 208); left: calc(100% - 500px); top: calc(100% - 500px); border-radius: 100%; }
+  75%  { background-color:green(255, 165, 0); left: 20; top: calc(100% - 200px); top: 0px;}
+  100% { background-color:red(255, 0, 0); left: 0px; top: 0px; }
+ */
 }
 
 @keyframes backgroundChange {
-  /* 0%   { opacity: 1; }
+  0%   { opacity: 5; }
   50%  { opacity: 0; }
-  100% { opacity: 1; } */
+  100% { opacity: 5; } 
   0%   { background-color:rgb(225, 225, 225); }
   50%  { background-color:rgb(25, 25, 25); }
-  100% { background-color:rgb(255, 255, 255); }
+  100% { background-color:rgb(255, 255, 255); } 
 }
 
 a:link,
 a:visited {
-  display: block;
+  display: square;
   color: #fff;
   text-align: center;
   line-height: 200px;
